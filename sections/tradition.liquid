@@ -1,0 +1,182 @@
+
+
+
+<div class="homepage-banner">
+
+    <div class="banner top-banner desktop">
+      <img class="new-banner-desktop" src="{{ section.settings.topbannerdesktop | img_url: '2000x' }}">
+      {% if section.settings.topbannertitle != blank %}
+      <div class="new-callouts desktop">
+        <div class="new-content-right" style="padding-top:0%; color: {{ section.settings.topbannercolor }};">
+          <h1 class="waypoint fade-in" style="color: {{ section.settings.topbannercolor }};">{{ section.settings.topbannertitle }}</h1>
+          {% if section.settings.topbannercopy != blank %}
+          <p style:"color: {{ section.settings.topbannercolor }};">{{ section.settings.topbannercopy }}</p>
+          {% endif %}
+          {% if ssection.settings.topbannerbtn != blank %}
+            <a class="cta dropshadow"  style="margin-top: 15px;" href="{{ section.settings.topbannerbtnlink }}">{{ section.settings.topbannerbtn }}</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="banner top-banner mobile">
+      <img class="new-banner-desktop" src="{{ section.settings.topbannermobile | img_url: '2000x' }}">
+      <div class="content">
+        <h1 class="waypoint fade-in">{{ section.settings.topbannertitle }}</h1>
+        {{ section.settings.topbannercopy }} 
+      </div>
+    </div>
+  
+  
+  </div>
+  
+  
+  <div class="our-tradition">
+  
+     <div class="tradition-block cf ">
+        <div class="img">
+          <div style="background: url({{ section.settings.mission1img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+        <div class="content right">
+          <div class="vertical">
+          <h1 class="waypoint fade-in">{{ section.settings.mission1title }}</h1>
+          <p>{{ section.settings.mission1copy }}</p>
+          </div>
+        </div>
+     </div>
+  
+     <div class="tradition-block cf">
+       
+        <div class="img show-mobile">
+          <div style="background: url({{ section.settings.mission2img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+        <div class="content left">
+          <div class="vertical">
+          <h1  class="waypoint fade-in">{{ section.settings.mission2title }}</h1>
+          <p>{{ section.settings.mission2copy }}</p>
+          </div>
+        </div>
+        <div class="img hide-mobile">
+          <div style="background: url({{ section.settings.mission2img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+     </div>
+  
+     <div class="tradition-block cf">
+        <div class="img">
+          <div style="background: url({{ section.settings.mission3img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+        <div class="content right">
+          <div class="vertical">
+          <h1  class="waypoint fade-in">{{ section.settings.mission3title }}</h1>
+          <p>{{ section.settings.mission3copy }}</p>
+          </div>
+        </div>
+     </div>
+  
+  
+  </div>
+  
+  
+  
+  
+  {% schema %}
+  {
+    "name": {
+      "en": "tradition Page"
+    },
+    "class": "tradition-page",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "topbannerdesktop",
+        "label": "Top Banner Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "topbannermobile",
+        "label": "Top Banner Mobile"
+      },
+      {
+          "type": "color",
+          "id": "topbannercolor",
+          "label": "Text color"
+      },
+      {
+        "type": "html",
+        "id": "topbannertitle",
+        "label": "Top Banner Title"
+      },
+      {
+        "type": "textarea",
+        "id": "topbannercopy",
+        "label": "Top Banner Copy"
+      },
+      {
+        "type": "text",
+        "id": "topbannerbtn",
+        "label": "Top Banner Btn"
+      },
+      {
+        "type": "url",
+        "id": "topbannerbtnlink",
+        "label": "Top Banner Button link"
+      },
+      {
+        "type": "image_picker",
+        "id": "mission1img",
+        "label": "Image 1"
+      },
+      {
+        "type": "text",
+        "id": "mission1title",
+        "label": "tradition 1 Title"
+      },
+      {
+        "type": "textarea",
+        "id": "mission1copy",
+        "label": "tradition 1 Copy"
+      },
+       {
+        "type": "image_picker",
+        "id": "mission2img",
+        "label": "Image 2"
+      },
+      {
+        "type": "text",
+        "id": "mission2title",
+        "label": "tradition 2 Title"
+      },
+      {
+        "type": "textarea",
+        "id": "mission2copy",
+        "label": "tradition 2 Copy"
+      },
+       {
+        "type": "image_picker",
+        "id": "mission3img",
+        "label": "Image 3"
+      },
+      {
+        "type": "text",
+        "id": "mission3title",
+        "label": "tradition 3 Title"
+      },
+      {
+        "type": "textarea",
+        "id": "mission3copy",
+        "label": "tradition 3 Copy"
+      }
+    ],
+    "presets": [
+      {
+        "name": {
+          "en": "tradition Page"
+        },
+        "category": {
+          "en": "Text"
+        }
+      }
+    ]
+  }
+  {% endschema %}
+  
