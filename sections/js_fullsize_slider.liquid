@@ -1,0 +1,178 @@
+
+{% assign text_color = section.settings.text_color %}
+{% assign overlay = section.settings.opacity | times: 0.01 %}
+
+<div id="sliderContainer" class="slider-container" style="color:{{ text_color }};">
+  {% for block in section.blocks %}
+  <div class="hero-slide" style="background-image:url({{ block.settings.slide_bg | img_url: '4000x' }});">
+    <div class="hero-slide-content">
+      <h2 style="color:{{ text_color }};">{{ block.settings.main_title }}</h2>
+      <p style="color:{{ text_color }};">{{ block.settings.sub_title }}</p>
+      <a class="cta dropshadow" href="{{ block.settings.slide_url}}">{{ block.settings.slide_url_text }}</a>
+    </div>
+  </div>
+  {% endfor %}
+  {% if section.settings.slide_controls == true %}
+    <div id="sliderControls" class="slider-controls">
+      <span id="slideCurrent"></span> / <span id="slideTotal"></span>
+      <span id="prev" class="slider-button prev">
+        <svg class="slider__svg-button prev" viewBox="0 0 100 100"><path style="fill:{{text_color}};" d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>
+      </span>
+      <span id="next" class="slider-button next">
+        <svg class="slider__svg-button next" viewBox="0 0 100 100"><path style="fill:{{text_color}};" d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>
+      </span>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  .hero-slide:after {
+    opacity: {{ overlay }};
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Full Height Hero Slider",
+    "settings": [
+      {
+        "type": "range",
+        "id": "opacity",
+        "label": "Select Hero Overlay Opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "default": 20
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Choose text color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_controls",
+        "label": "Show slide controls and count",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "select",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "slide_bg",
+            "label": "Slide Background"
+          },
+          {
+            "type": "text",
+            "id": "main_title",
+            "label": "Slide Title"
+          },
+          {
+            "type": "text",
+            "id": "sub_title",
+            "label": "Slide Subtitle"
+          },
+          {
+            "type": "url",
+            "id": "slide_url",
+            "label": "Slide URL"
+          },
+          {
+            "type": "text",
+            "id": "slide_url_text",
+            "label": "Slide Button Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Full Height Hero Slider",
+        "category": "Slider",
+        "blocks": [
+          {
+            "type": "select"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+
+{% javascript %}
+// hero slider
+$(document).ready(function () {
+    let slideImages = $('.hero-slide');
+    let current = 0;
+    let interval = setInterval(function () {
+        nextSlide();
+    }, 5000);
+
+
+    $('#sliderContainer').on('mouseenter', function () {
+        clearInterval(interval);
+    });
+
+
+    // Clear All Images
+    function reset() {
+        for (let i = 0; i < slideImages.length; i++) {
+            slideImages[i].classList.remove('slide-active');
+        }
+    }
+
+    function startSlide() {
+        reset();
+        slideImages[0].classList.add('slide-active');
+        $('#slideCurrent').text(current + 1);
+    }
+
+    // Show Prev
+    function slideLeft() {
+        reset();
+        slideImages[current - 1].classList.add('slide-active');
+        current--;
+    }
+
+    // Left Arrow Click
+    $('#prev').on('click', function () {
+        if (current === 0) {
+            current = slideImages.length;
+        }
+        slideLeft()
+        $('#slideCurrent').text(current + 1);
+    })
+
+    // Show Next
+    function slideRight() {
+        reset();
+        slideImages[current + 1].classList.add('slide-active');
+        current++;
+    }
+
+    function nextSlide() {
+        if (current === slideImages.length - 1) {
+            current = -1;
+        }
+        slideRight()
+        $('#slideCurrent').text(current + 1);
+    }
+
+    //Right Arrow Click
+    $('#next').on('click', function () {
+        nextSlide();
+    })
+
+    // Insert Total Slides
+    $('#slideTotal').text(slideImages.length);
+
+    startSlide();
+});
+{% endjavascript %}

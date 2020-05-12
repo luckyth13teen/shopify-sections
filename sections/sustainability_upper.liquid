@@ -1,0 +1,252 @@
+
+
+<div class="homepage-banner">
+
+    <div class="banner top-banner desktop">
+      <img class="new-banner-desktop" src="{{ section.settings.topbannerdesktop | img_url: '2000x' }}">
+      {% if section.settings.topbannertitle != blank %}
+      <div class="new-callouts desktop">
+        <div class="new-content-right" >
+          <h1 style="color: {{ section.settings.topbannercolor }};" class="waypoint fade-in">{{ section.settings.topbannertitle }}</h1>
+          {% if section.settings.topbannercopy != blank %}<p style="color: {{ section.settings.topbannercolor }};">{{ section.settings.topbannercopy }}</p>{% endif %}
+          {% if section.settings.topbannerpricing != blank %}{{ section.settings.topbannerpricing }}{% endif %}
+          {% if section.settings.topbannerbtn != blank %}<a class="cta dropshadow"  style="margin-top: 15px;" href="{{ section.settings.topbannerbtnlink }}">{{ section.settings.topbannerbtn }}</a>{% endif %}
+          {% if section.settings.logo1 != blank %}
+            <div class="collab-logos">
+              <img src="{{ section.settings.logo2 | img_url: '600x' }}">
+              <span>+</span>
+              <img src="{{ section.settings.logo1 | img_url: '600x' }}">
+            </div>
+          {% endif %}
+         
+        </div>
+      </div>
+  
+       {% if section.settings.logo3 != blank %}
+          <img class="botom-right-icon" src="{{ section.settings.logo3 | img_url: '300x' }}">
+          {% endif %}
+      {% endif %}
+    </div>
+    <div class="banner top-banner mobile">
+      <img class="new-banner-mobile" src="{{ section.settings.topbannermobile | img_url: '900x' }}">
+      <div class="content">
+        <h1 class="waypoint fade-in">{{ section.settings.topbannertitle }}</h1>
+        {% if section.settings.topbannercopy != blank %}{{ section.settings.topbannercopy }}{% endif %}
+        {% if section.settings.topbannerbtn != blank %}<a class="cta dropshadow"  style="margin-top: 15px;" href="{{ section.settings.topbannerbtnlink }}">{{ section.settings.topbannerbtn }}</a>{% endif%}
+      </div>
+    </div>
+  
+  </div>
+  
+  <div class="full-width-copy" style="backgroundcolor: {{ section.settings.secbackgroundcolor }};">
+    <div style="max-width: 800px; margin: 0 auto;">
+    <h1 class="waypoint fade-in" "color: {{ section.settings.secfontcolor }};">{{ section.settings.fulltitle }}</h1>
+   
+    {{ section.settings.fullcopy }} 
+     
+    </div>
+  </div>
+  <div class="triple-container" style="background-color: rgb(243, 236, 222);">
+      <div class="triple-section">
+  
+            <img class="triple-img-container" src="{{section.settings.tertiarylinkimg | img_url: '900x' }}">
+            <div class="triple-header">
+            <h3>{{section.settings.lefttripletitle}}</h3>
+           </div>
+            <div class="triple-copy">
+            <p>{{section.settings.lefttriplecopy}}</p>
+            
+               <a class="cta dropshadow" href="{{section.settings.tertiarylink1}}">{{section.settings.tertiarytext1}}</a>
+          </div>
+      </div>
+      <div class="triple-section">
+  
+            <img class="triple-img-container" src="{{section.settings.tertiarylinkimg2 | img_url: '900x' }}">
+            <div class="triple-header">
+            <h3>{{section.settings.lefttripletitle2}}</h3>
+           </div>
+            <div class="triple-copy">
+            <p>{{section.settings.lefttriplecopy2}}</p>
+            
+               <a class="cta dropshadow" href="{{section.settings.tertiarylink2}}">{{section.settings.tertiarytext2}}</a>
+            </div>
+      </div>
+    <div class="triple-section">
+  
+            <img class="triple-img-container" src="{{section.settings.tertiarylinkimg3 | img_url: '900x' }}">
+            <div class="triple-header">
+            <h3>{{section.settings.lefttripletitle3}}</h3>
+           </div>
+            <div class="triple-copy">
+            <p>{{section.settings.lefttriplecopy3}}</p>
+            
+               <a class="cta dropshadow" href="{{section.settings.tertiarylink3}}">{{section.settings.tertiarytext3}}</a>
+          </div>
+      </div>
+  </div>
+                                                                          
+  {% schema %}
+    {
+      "name": "Sustainability Module",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "topbannerdesktop",
+          "label": "Top Banner Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "topbannermobile",
+          "label": "Top Banner Mobile"
+        },
+        {
+          "type": "color",
+          "id": "topbannercolor",
+          "label": "Top Banner Text color"
+        },
+        {
+          "type": "html",
+          "id": "topbannertitle",
+          "label": "Top Banner Title"
+        },
+        {
+          "type": "html",
+          "id": "topbannercopy",
+          "label": "Top Banner Copy"
+        },
+        {
+          "type": "html",
+          "id": "topbannerpricing",
+          "label": "Top Banner Pricing"
+        },
+        {
+          "type": "text",
+          "id": "topbannerbtn",
+          "label": "Top Banner Btn"
+        },
+        {
+          "type": "url",
+          "id": "topbannerbtnlink",
+          "label": "Top Banner Button link"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo1",
+          "label": "Collab logo1"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo2",
+          "label": "Collab logo2"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo3",
+          "label": "Bottom right logo/icon"
+        },
+         {
+          "type": "color",
+          "id": "secbackgroundcolor",
+          "label": "2nd Banner Background color"
+        },
+        {
+          "type": "color",
+          "id": "secfontcolor",
+          "label": "2nd Banner Text color"
+        },
+        {
+        "type": "html",
+        "id": "fulltitle",
+        "label": "Full Title"
+        },
+        {
+        "type": "richtext",
+        "id": "fullcopy",
+        "label": "Full Width Copy"
+        },
+        {
+          "type": "image_picker",
+          "id": "tertiarylinkimg",
+          "label": "Left Img"
+        },
+        {
+          "type": "html",
+          "id": "lefttripletitle",
+          "label": "Left Header"
+        },
+        {
+          "type": "html",
+          "id": "lefttriplecopy",
+          "label": "Left Copy"
+        },
+        {
+          "type": "url",
+          "id": "tertiarylink1",
+          "label": "Left Button URL"
+        },
+        {
+          "type": "text",
+          "id": "tertiarytext1",
+          "label": "Left Copy"
+        },
+        {
+          "type": "image_picker",
+          "id": "tertiarylinkimg2",
+          "label": "Middle Img"
+        },
+        {
+          "type": "html",
+          "id": "lefttripletitle2",
+          "label": "Middle Header"
+        },
+        {
+          "type": "html",
+          "id": "lefttriplecopy2",
+          "label": "Middle Copy"
+        },
+        {
+          "type": "url",
+          "id": "tertiarylink2",
+          "label": "Middle Button URL"
+        },
+        {
+          "type": "text",
+          "id": "tertiarytext2",
+          "label": "Middle Copy"
+        },
+        {
+          "type": "image_picker",
+          "id": "tertiarylinkimg3",
+          "label": "Right Img"
+        },
+        {
+          "type": "html",
+          "id": "lefttripletitle3",
+          "label": "Right Header"
+        },
+        {
+          "type": "html",
+          "id": "lefttriplecopy3",
+          "label": "Right Copy"
+        },
+        {
+          "type": "url",
+          "id": "tertiarylink3",
+          "label": "Right Button URL"
+        },
+        {
+          "type": "text",
+          "id": "tertiarytext3",
+          "label": "Right Copy"
+        }
+       
+       ],
+      "presets": [
+        {
+          "name": "Sustainability Module",
+          "category": "Image"
+        }
+      ]
+    }
+  {% endschema %}
+  

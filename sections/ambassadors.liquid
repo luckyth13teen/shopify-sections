@@ -1,0 +1,344 @@
+
+
+
+<div class="homepage-banner">
+
+    <div class="banner top-banner desktop">
+      <img class="new-banner-desktop" src="{{ section.settings.topbannerdesktop | img_url: '2000x' }}">
+      {% if section.settings.topbannertitle != blank %}
+      <div class="new-callouts desktop">
+        <div class="new-content-right" style="padding-top:0%; color: white;">
+          <h1 class="waypoint fade-in" style="color: white;">{{ section.settings.topbannertitle }}</h1>
+          {% if section.settings.topbannercopy != blank %}
+          <p>{{ section.settings.topbannercopy }}</p>
+          {% endif %}
+          {% if ssection.settings.topbannerbtn != blank %}
+            <a class="cta dropshadow"  style="margin-top: 15px;" href="{{ section.settings.topbannerbtnlink }}">{{ section.settings.topbannerbtn }}</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="banner top-banner mobile">
+      <img class="new-banner-desktop" src="{{ section.settings.topbannermobile | img_url: '2000x' }}">
+      <div class="content">
+        <h1 class="waypoint fade-in">{{ section.settings.topbannertitle }}</h1>
+        {{ section.settings.topbannercopy }} 
+      </div>
+    </div>
+  
+  
+  </div>
+  
+  
+  <div class="our-tradition tanned">
+  
+     <div class="tradition-block cf">
+        <div class="img show-mobile">
+          <div style="background: url({{ section.settings.mission1img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+        <div class="content right ">
+          <div class="vertical">
+          <h1 class="waypoint fade-in">{{ section.settings.mission1title }}</h1>
+          <p>{{ section.settings.mission1copy }}</p>
+          </div>
+        </div>
+       <div class="img hide-mobile">
+          <div style="background: url({{ section.settings.mission1img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+     </div>
+  
+     <div class="tradition-block cf mt-3">
+       
+        <div class="img show-mobile">
+          <div style="background: url({{ section.settings.mission2img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+        <div class="content left ">
+          <div class="vertical">
+          <h1  class="waypoint fade-in">{{ section.settings.mission2title }}</h1>
+          <p>{{ section.settings.mission2copy }}</p>
+          </div>
+        </div>
+        <div class="img hide-mobile">
+          <div style="background: url({{ section.settings.mission2img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+     </div>
+  
+     <div class="tradition-block cf mt-3">
+        <div class="img show-mobile">
+          <div style="background: url({{ section.settings.mission3img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+        <div class="content right">
+          <div class="vertical">
+          <h1  class="waypoint fade-in">{{ section.settings.mission3title }}</h1>
+          <p>{{ section.settings.mission3copy }}</p>
+          </div>
+        </div>
+       <div class="img hide-mobile">
+          <div style="background: url({{ section.settings.mission3img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+     </div>
+  
+       <div class="tradition-block cf mt-3">
+       
+        <div class="img show-mobile">
+          <div style="background: url({{ section.settings.mission4img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+        <div class="content left">
+          <div class="vertical">
+          <h1  class="waypoint fade-in">{{ section.settings.mission4title }}</h1>
+          <p>{{ section.settings.mission4copy }}</p>
+          </div>
+        </div>
+        <div class="img hide-mobile">
+          <div style="background: url({{ section.settings.mission4img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+     </div>
+  
+     <div class="tradition-block cf mt-3">
+        <div class="img show-mobile">
+          <div style="background: url({{ section.settings.mission5img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+        <div class="content right">
+          <div class="vertical">
+          <h1  class="waypoint fade-in">{{ section.settings.mission5title }}</h1>
+          <p>{{ section.settings.mission5copy }}</p>
+          </div>
+        </div>
+       <div class="img hide-mobile">
+          <div style="background: url({{ section.settings.mission5img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+     </div>
+  
+   <div class="tradition-block cf mt-3">
+      <div class="img show-mobile">
+        <div style="background: url({{ section.settings.mission6img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+      </div>
+      <div class="content right">
+        <div class="vertical">
+        <h1  class="waypoint fade-in">{{ section.settings.mission6title }}</h1>
+        <p>{{ section.settings.mission6copy }}</p>
+        </div>
+      </div>
+     <div class="img hide-mobile">
+        <div style="background: url({{ section.settings.mission6img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+      </div>
+   </div>
+  
+     <div class="tradition-block cf mt-3">
+        <div class="img show-mobile">
+          <div style="background: url({{ section.settings.mission7img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+        <div class="content right">
+          <div class="vertical">
+          <h1  class="waypoint fade-in">{{ section.settings.mission7title }}</h1>
+          <p>{{ section.settings.mission7copy }}</p>
+          </div>
+        </div>
+       <div class="img hide-mobile">
+          <div style="background: url({{ section.settings.mission7img | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+     </div>
+      {% for block in section.blocks %}
+    <div class="tradition-block cf mt-3">
+        <div class="img show-mobile">
+          <div style="background: url({{ block.settings.missionimgr | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+        <div class="content right">
+          <div class="vertical">
+          <h1  class="waypoint fade-in">{{ block.settings.missiontitler }}</h1>
+          <p>{{ block.settings.missioncopyr }}</p>
+          </div>
+        </div>
+       <div class="img hide-mobile">
+          <div style="background: url({{ block.settings.missionimgr | img_url: '1200x' }}) no-repeat center center; background-size: cover; padding-top: 100%; width: 100%;"></div>
+        </div>
+     </div>
+    {% endfor %}
+     
+    
+  
+  </div>
+  
+  
+  
+  
+  {% schema %}
+  {
+    "name": {
+      "en": "Ambassadors Page"
+    },
+    "class": "ambassadors-page",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "topbannerdesktop",
+        "label": "Top Banner Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "topbannermobile",
+        "label": "Top Banner Mobile"
+      },
+      {
+        "type": "html",
+        "id": "topbannertitle",
+        "label": "Top Banner Title"
+      },
+      {
+        "type": "textarea",
+        "id": "topbannercopy",
+        "label": "Top Banner Copy"
+      },
+      {
+        "type": "text",
+        "id": "topbannerbtn",
+        "label": "Top Banner Btn"
+      },
+      {
+        "type": "url",
+        "id": "topbannerbtnlink",
+        "label": "Top Banner Button link"
+      },
+      {
+        "type": "image_picker",
+        "id": "mission1img",
+        "label": "Image 1"
+      },
+      {
+        "type": "text",
+        "id": "mission1title",
+        "label": "Ambassador 1 Title"
+      },
+      {
+        "type": "textarea",
+        "id": "mission1copy",
+        "label": "Ambassador 1 Copy"
+      },
+       {
+        "type": "image_picker",
+        "id": "mission2img",
+        "label": "Image 2"
+      },
+      {
+        "type": "text",
+        "id": "mission2title",
+        "label": "Ambassador 2 Title"
+      },
+      {
+        "type": "textarea",
+        "id": "mission2copy",
+        "label": "Ambassador 2 Copy"
+      },
+       {
+        "type": "image_picker",
+        "id": "mission3img",
+        "label": "Image 3"
+      },
+      {
+        "type": "text",
+        "id": "mission3title",
+        "label": "Ambassador 3 Title"
+      },
+      {
+        "type": "textarea",
+        "id": "mission3copy",
+        "label": "Ambassador 3 Copy"
+      },
+      {
+        "type": "image_picker",
+        "id": "mission4img",
+        "label": "Image 4"
+      },
+      {
+        "type": "text",
+        "id": "mission4title",
+        "label": "Ambassador 4 Title"
+      },
+      {
+        "type": "textarea",
+        "id": "mission4copy",
+        "label": "Ambassador 4 Copy"
+      },
+      {
+        "type": "image_picker",
+        "id": "mission5img",
+        "label": "Image 5"
+      },
+      {
+        "type": "text",
+        "id": "mission5title",
+        "label": "Ambassador 5 Title"
+      },
+      {
+        "type": "textarea",
+        "id": "mission5copy",
+        "label": "Ambassador 5 Copy"
+      },
+      {
+        "type": "image_picker",
+        "id": "mission6img",
+        "label": "Image 6"
+      },
+      {
+        "type": "text",
+        "id": "mission6title",
+        "label": "Ambassador 6 Title"
+      },
+      {
+        "type": "textarea",
+        "id": "mission6copy",
+        "label": "Ambassador 6 Copy"
+      },
+      {
+        "type": "image_picker",
+        "id": "mission7img",
+        "label": "Image 7"
+      },
+      {
+        "type": "text",
+        "id": "mission7title",
+        "label": "Ambassador 7 Title"
+      },
+      {
+        "type": "textarea",
+        "id": "mission7copy",
+        "label": "Ambassador 7 Copy"
+      }
+    ],
+      "blocks": [
+        {
+          "type": "select",
+          "name": "Additional Ambassadors",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "missionimgr",
+              "label": "New Ambassador Headshot"
+            },
+            {
+              "type": "text",
+              "id": "missiontitler",
+              "label": "Ambassador Title"
+            },
+            {
+              "type": "text",
+              "id": "missioncopyr",
+              "label": "Ambassador Copy"
+            }
+          ]
+      }
+  ],
+    "presets": [
+      {
+        "name": {
+          "en": "Ambassadors Page"
+        },
+        "category": {
+          "en": "Text"
+        }
+      }
+    ]
+  }
+  {% endschema %}
+  

@@ -1,0 +1,34 @@
+<h1 class="tac">{{ collection.title }}</h1>
+{% if collection.description != blank %}<div class="wrapper tac">
+  <h2>{{collection.description}}</h2>
+</div>{% endif %}
+  <div class="grid-collection">
+    {% for product in collection.products %}
+      <div class="grid-product">
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image.src | img_url: '300x' }}" alt="{{ product.featured_image.alt | escape }}">
+        </a>
+        <a class="mt-2 h6" href="{{ product.url }}">{{ product.title }}</a>
+        <br>
+          <p>{{ product.price | money }}</p>
+        	{% if sold_out %}
+        <div class="grid-product__sold-out">
+          <p>{{ 'products.product.sold_out_html' | t }}</p>
+        </div>
+      {% elsif on_sale %}
+        <div class="grid-product__on-sale">
+          {% capture saved_amount %}{{ product.compare_at_price | minus: product.price | money_without_trailing_zeros }}{% endcapture %}
+          <p>{{ 'products.general.save_html' | t: saved_amount: saved_amount }}</p>
+        </div>
+      {% endif %}
+          {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+         {% capture "form_classes" %}
+        product-single__form{% if product.has_only_default_variant %} product-single__form--no-variants{% endif %}
+      {%- endcapture %}
+
+      {% capture "form_id" %}AddToCartForm--{{ section.id }}{%- endcapture %}
+
+      
+      </div>
+    {% endfor %}
+  </div>

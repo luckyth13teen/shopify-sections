@@ -1,0 +1,193 @@
+<div class="triple-container-nom">
+	<div class="triple-section-nom wt"> 
+      <div style="background: url({{section.settings.tertiarylinkimg | img_url: '1900x' }}) no-repeat center bottom; background-size: cover; height: 100%; width: 100%;">  
+      <div class="centered-trip-content">
+        <div class="tac">
+          <h2>{{section.settings.lefttripletitle}}</h2>
+         </div>
+        <div class="tac">
+          <p>{{section.settings.lefttriplecopy}}</p>
+              <a class="cta dropshadow mt-30" href="{{section.settings.tertiarylink1}}">{{section.settings.tertiarytext1}}</a>
+        </div> 
+      </div>
+      </div>
+    </div>
+    <div class="triple-section-nom wt">
+      <div style="background: url({{section.settings.tertiarylinkimg2 | img_url: '1900x' }}) no-repeat center bottom; background-size: cover; height: 100%; width: 100%;">
+      	<div class="centered-trip-content">
+        <div class="tac">
+          <h2>{{section.settings.lefttripletitle2}}</h2>
+         </div>
+      	<div class="tac">
+          <p>{{section.settings.lefttriplecopy2}}</p>
+     		<a class="cta dropshadow mt-30" href="{{section.settings.tertiarylink2}}">{{section.settings.tertiarytext2}}</a>
+      	</div>
+        </div>
+      </div>
+  	</div>
+    <div class="triple-section-nom wt">
+      <div style="background: url({{section.settings.tertiarylinkimg3 | img_url: '1900x' }}) no-repeat center bottom; background-size: cover; height: 100%; width: 100%;">
+      	<div class="centered-trip-content">
+        <div class="tac">
+          <h2>{{section.settings.lefttripletitle3}}</h2>
+         </div>
+      	<div class="tac">
+          <p>{{section.settings.lefttriplecopy3}}</p>
+          
+     		<a class="cta dropshadow mt-30" href="{{section.settings.tertiarylink3}}">{{section.settings.tertiarytext3}}</a>
+        </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="sub-banner-bar"></div>
+<div class="homepage-banner">
+
+  <div class="banner top-banner desktop tac">
+    <img class="new-banner-desktop" src="{{ section.settings.bannerdeskb | img_url: '2000x' }}">
+    {% if section.settings.bannertexttitleb != blank %}
+    <div class="new-callouts-cent desktop">
+      <div class="new-content-right" >
+        <h1 style="color: {{ section.settings.bannertextcolorb }};" class="waypoint fade-in">{{ section.settings.bannertexttitleb }}</h1>
+        {% if section.settings.bannertextcopyb != blank %}<div class="mt-2" style="color: {{ section.settings.bannertextcolorb }};">{{ section.settings.bannertextcopyb }}</div>{% endif %}
+        
+        {% if section.settings.bannerurlb != blank %}<a class="cta dropshadow"  style="margin-top: 15px;" href="{{ section.settings.bannerurlb }}">{{ section.settings.bannertextbtnb }}</a>{% endif %}
+        
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  <div class="banner top-banner mobile tac">
+    <img class="new-banner-mobile" src="{{ section.settings.bannermobb | img_url: '900x' }}">
+    <div class="centered-banner-content tac">
+      <h1 class="waypoint fade-in tac" style="color: {{ section.settings.bannertextcolorb }};">{{ section.settings.bannertexttitleb }}</h1>
+      {% if section.settings.topbannercopy != blank %}<div style="color: {{ section.settings.bannertextcolorb }};">{{ section.settings.bannertextcopyb }}</div>{% endif %}
+      {% if section.settings.bannerurlb != blank %}<a class="cta dropshadow"  style="margin-top: 15px;" href="{{ section.settings.bannerurlb }}">SHOP</a>{% endif %}
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Lower Collection Beef",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "tertiarylinkimg",
+        "label": "Left Img"
+      },
+      {
+        "type": "html",
+        "id": "lefttripletitle",
+        "label": "Left Header"
+      },
+      {
+        "type": "html",
+        "id": "lefttriplecopy",
+        "label": "Left Copy"
+      },
+      {
+        "type": "url",
+        "id": "tertiarylink1",
+        "label": "Left Button URL"
+      },
+      {
+        "type": "text",
+        "id": "tertiarytext1",
+        "label": "Left Copy"
+      },
+      {
+        "type": "image_picker",
+        "id": "tertiarylinkimg2",
+        "label": "Middle Img"
+      },
+      {
+        "type": "html",
+        "id": "lefttripletitle2",
+        "label": "Middle Header"
+      },
+      {
+        "type": "html",
+        "id": "lefttriplecopy2",
+        "label": "Middle Copy"
+      },
+      {
+        "type": "url",
+        "id": "tertiarylink2",
+        "label": "Middle Button URL"
+      },
+      {
+        "type": "text",
+        "id": "tertiarytext2",
+        "label": "Middle Copy"
+      },
+      {
+        "type": "image_picker",
+        "id": "tertiarylinkimg3",
+        "label": "Right Img"
+      },
+      {
+        "type": "html",
+        "id": "lefttripletitle3",
+        "label": "Right Header"
+      },
+      {
+        "type": "html",
+        "id": "lefttriplecopy3",
+        "label": "Right Copy"
+      },
+      {
+        "type": "url",
+        "id": "tertiarylink3",
+        "label": "Right Button URL"
+      },
+      {
+        "type": "text",
+        "id": "tertiarytext3",
+        "label": "Right Copy"
+      },
+      {
+        "type": "image_picker",
+        "id": "bannerdeskb",
+        "label": "Bottom Banner Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "bannermobb",
+        "label": "Bottom Banner Mobile"
+      },
+      {
+        "type": "color",
+        "id": "bannertextcolorb",
+        "label": "Bottom Banner Text color"
+      },
+      {
+        "type": "html",
+        "id": "bannertexttitleb",
+        "label": "Bottom Banner Title"
+      },
+      {
+        "type": "html",
+        "id": "bannertextcopyb",
+        "label": "Bottom Banner Copy"
+      },
+      {
+        "type": "text",
+        "id": "bannertextbtnb",
+        "label": "Bottom Banner Btn"
+      },
+      {
+        "type": "url",
+        "id": "bannerurlb",
+        "label": "Bottom Banner Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Lower Collection Beef",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

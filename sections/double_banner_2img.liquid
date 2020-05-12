@@ -1,0 +1,88 @@
+
+
+<div class="yeti-area cf">
+
+    <div class="left-area" style="background: url('{{ section.settings.yetipack1 | img_url: '1200x' }}') no-repeat center bottom; background-size: cover;">
+      <div class="yeti-callout">
+        <h1>{{ section.settings.yetileft1 }}</h1>
+        <p>{{ section.settings.yetileft2 }}</p>
+        <a href="{{ section.settings.yetisignup1 }}" class="cta dropshadow">{{ section.settings.yetisignuptxt1 }}</a>
+  
+      </div>
+    </div>
+    <div class="right-area" style="background: url('{{ section.settings.yetipack2 | img_url: '1200x' }}') no-repeat center bottom; background-size: cover;">
+      <div class="yeti-callout">
+          <h1>{{ section.settings.yetiright1 }}</h1>
+          <p>{{ section.settings.yetiright2 }}</p>
+          <a href="{{ section.settings.yetisignup2 }}" class="cta dropshadow" >{{ section.settings.yetisignuptxt2 }}</a>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  
+  <div class="sub-banner-bar"></div>
+  
+  {% schema %}
+    {
+      "name": "Double Banner two img",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "yetipack1",
+          "label": "Left Background Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "yetipack2",
+          "label": "Right Background Image"
+        },
+        {
+          "type": "html",
+          "id": "yetileft1",
+          "label": "Left Title"
+        },
+        {
+          "type": "html",
+          "id": "yetileft2",
+          "label": "Left Copy"
+        },
+        {
+          "type": "html",
+          "id": "yetiright1",
+          "label": "Right Title"
+        },
+        {
+          "type": "html",
+          "id": "yetiright2",
+          "label": "Right Copy"
+        },
+        {
+          "type": "url",
+          "id": "yetisignup1",
+          "label": "URL/Link"
+        },
+        {
+          "type": "text",
+          "id": "yetisignuptxt1",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "yetisignup2",
+          "label": "URL/link"
+        },
+        {
+          "type": "text",
+          "id": "yetisignuptxt2",
+          "label": "Button text"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Double Banner two img",
+          "category": "Text"
+        }
+      ]
+    }
+  {% endschema %}
+  

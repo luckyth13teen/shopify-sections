@@ -1,0 +1,77 @@
+<div class="sub-banner-bar"></div>
+<div class="homepage-banner">
+
+  <div class="banner top-banner desktop tac">
+    <img class="new-banner-desktop" src="{{ section.settings.bannerdeskb | img_url: '2000x' }}">
+    {% if section.settings.bannertexttitleb != blank %}
+    <div class="new-callouts-cent-2 desktop">
+      <div class="new-content-right" >
+        <h1 style="color: {{ section.settings.bannertextcolorb }};" class="waypoint fade-in">{{ section.settings.bannertexttitleb }}</h1>
+        {% if section.settings.bannertextcopyb != blank %}<div style="color: {{ section.settings.bannertextcolorb }};">{{ section.settings.bannertextcopyb }}</div>{% endif %}
+        
+        {% if section.settings.bannerurlb != blank %}<a class="cta dropshadow" id="killmargin-left"  style="margin-top: 15px;" href="{{ section.settings.bannerurlb }}">{{ section.settings.bannertextbtnb }}</a>{% endif %}
+        
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  <div class="banner top-banner mobile tac">
+    <img class="new-banner-mobile" src="{{ section.settings.bannermobb | img_url: '900x' }}">
+    <div class="content tac tanned">
+      <h1 class="waypoint fade-in tac">{{ section.settings.bannertexttitleb }}</h1>
+      {% if section.settings.topbannercopy != blank %}<div style="color: {{ section.settings.bannertextcolorb }};">{{ section.settings.bannertextcopyb }}</div>{% endif %}
+      {% if section.settings.bannerurlb != blank %}<a class="cta dropshadow"  style="margin-top: 15px;" href="{{ section.settings.bannerurlb }}">Shop</a>{% endif %}
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Lower Order Meats Banner",
+    "settings": [
+	{
+        "type": "image_picker",
+        "id": "bannerdeskb",
+        "label": "Bottom Banner Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "bannermobb",
+        "label": "Bottom Banner Mobile"
+      },
+      {
+        "type": "color",
+        "id": "bannertextcolorb",
+        "label": "Bottom Banner Text color"
+      },
+      {
+        "type": "html",
+        "id": "bannertexttitleb",
+        "label": "Bottom Banner Title"
+      },
+      {
+        "type": "html",
+        "id": "bannertextcopyb",
+        "label": "Bottom Banner Copy"
+      },
+      {
+        "type": "text",
+        "id": "bannertextbtnb",
+        "label": "Bottom Banner Btn"
+      },
+      {
+        "type": "url",
+        "id": "bannerurlb",
+        "label": "Bottom Banner Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Lower Order Meats Banner",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}
+

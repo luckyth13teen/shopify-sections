@@ -1,0 +1,112 @@
+
+
+<div class="homepage-banner">
+
+    <div class="banner top-banner desktop">
+      <img class="new-banner-desktop" src="{{ section.settings.topbannerdesktop | img_url: '4000x' }}">
+      {% if section.settings.topbannertitle != blank %}
+      <div class="new-callouts desktop">
+        <div class="new-content-right" >
+          <h1 style="color: {{ section.settings.topbannercolor }};" class="waypoint fade-in">{{ section.settings.topbannertitle }}</h1>
+          {% if section.settings.topbannercopy != blank %}<div style="color: {{ section.settings.topbannercolor }};">{{ section.settings.topbannercopy }}</div>{% endif %}
+          {% if section.settings.topbannerpricing != blank %}{{ section.settings.topbannerpricing }}{% endif %}
+          {% if section.settings.topbannerbtnlink != blank %}<a class="cta dropshadow"  style="margin-top: 15px;" href="{{ section.settings.topbannerbtnlink }}">{{ section.settings.topbannerbtn }}</a>{% endif %}
+          {% if section.settings.logo1 != blank %}
+            <div class="collab-logos">
+              <img src="{{ section.settings.logo2 | img_url: '600x' }}">
+              <span>+</span>
+              <img src="{{ section.settings.logo1 | img_url: '600x' }}">
+            </div>
+          {% endif %}
+         
+        </div>
+      </div>
+  
+       {% if section.settings.logo3 != blank %}
+          <img class="botom-right-icon" src="{{ section.settings.logo3 | img_url: '300x' }}">
+          {% endif %}
+      {% endif %}
+    </div>
+    <div class="banner top-banner mobile">
+      <img class="new-banner-mobile" src="{{ section.settings.topbannermobile | img_url: '900x' }}">
+      <div class="content">
+        <h1 class="waypoint fade-in">{{ section.settings.topbannertitle }}</h1>
+        {% if section.settings.topbannercopy != blank %}{{ section.settings.topbannercopy }}{% endif %}
+        {% if section.settings.topbannerbtnlink != blank %}<a class="cta dropshadow"  style="margin-top: 15px;" href="{{ section.settings.topbannerbtnlink }}">{{ section.settings.topbannerbtn }}</a>{% endif %}
+      </div>
+    </div>
+  
+  </div>
+  
+  <div class="sub-banner-bar"></div>
+  
+  
+  {% schema %}
+    {
+      "name": "Top Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "topbannerdesktop",
+          "label": "Top Banner Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "topbannermobile",
+          "label": "Top Banner Mobile"
+        },
+        {
+          "type": "color",
+          "id": "topbannercolor",
+          "label": "Top Banner Text color"
+        },
+        {
+          "type": "html",
+          "id": "topbannertitle",
+          "label": "Top Banner Title"
+        },
+        {
+          "type": "html",
+          "id": "topbannercopy",
+          "label": "Top Banner Copy"
+        },
+        {
+          "type": "html",
+          "id": "topbannerpricing",
+          "label": "Top Banner Pricing"
+        },
+        {
+          "type": "text",
+          "id": "topbannerbtn",
+          "label": "Top Banner Btn"
+        },
+        {
+          "type": "url",
+          "id": "topbannerbtnlink",
+          "label": "Top Banner Button link"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo1",
+          "label": "Collab logo1"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo2",
+          "label": "Collab logo2"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo3",
+          "label": "Bottom right logo/icon"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Top Banner",
+          "category": "Image"
+        }
+      ]
+    }
+  {% endschema %}
+  

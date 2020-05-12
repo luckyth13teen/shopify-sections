@@ -1,0 +1,36 @@
+<div class="wrapper">
+    <div class="yeti-about">
+      <h1>{{ section.settings.topbannertitle }}</h1>
+      <div class="whats-in-it-wide">
+      <p>{{ section.settings.topbannercopy }}</p>
+      </div>
+    </div>
+  </div>
+  
+  {% schema %}
+  {
+    "name": {
+      "en": "What's Included Bag Addon"
+    },
+    "class": "Rich Text Addon",
+    "settings": [
+      {
+        "type": "html",
+        "id": "topbannertitle",
+        "label": "Top Banner Title"
+      },
+      {
+        "type": "richtext",
+        "id": "topbannercopy",
+        "label": "Top Banner Copy"
+      }
+          ],
+      "presets": [
+        {
+          "name": "What's Included Bag Addon",
+          "category": "Text"
+        }
+      ]
+    }
+  {% endschema %}
+  

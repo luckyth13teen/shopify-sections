@@ -1,0 +1,179 @@
+
+
+<div class="homepage-banner">
+
+    <div class="banner top-banner desktop">
+      <img class="new-banner-desktop" src="{{ section.settings.topbannerdesktop | img_url: '4000x' }}">
+      {% if section.settings.topbannertitle != blank %}
+      <div class="new-callouts desktop">
+        <div class="new-content-right" >
+          <h1 style="color: {{ section.settings.topbannercolor }};" class="waypoint fade-in">{{ section.settings.topbannertitle }}</h1>
+          {% if section.settings.topbannercopy != blank %}<p class="mt-1" style="color: {{ section.settings.topbannercolor }};">{{ section.settings.topbannercopy }}</p>{% endif %}
+          
+         
+        </div>
+      </div>
+  
+     
+      {% endif %}
+    </div>
+    <div class="banner top-banner mobile">
+      <img class="new-banner-mobile" src="{{ section.settings.topbannermobile | img_url: '900x' }}">
+      <div class="content">
+        <h1 class="waypoint fade-in">{{ section.settings.topbannertitle }}</h1>
+        {% if section.settings.topbannercopy != blank %}{{ section.settings.topbannercopy }}{% endif %}
+      </div>
+    </div>
+  
+  </div>
+  
+  <div class="sub-banner-bar"></div>
+  
+  <div data-section-id="{{ section.id }}" data-section-type="quotes">
+    {% if section.settings.title != blank %}
+      <div class="section-header text-center">
+        <h2>{{ section.settings.title | escape }}</h2>
+      </div>
+    {% endif %}
+  
+    {% if section.blocks.size > 0 %}
+      <div class="quotes-wrapper">
+        <div class="quotes-slider" id="Quotes-{{ section.id }}" data-count="{{ section.blocks.size }}">
+          {% for block in section.blocks %}
+            <div class="quotes-slide--{{ block.id }}" {{ block.shopify_attributes }}>
+              <blockquote class="quotes-slider__text text-center">
+  <!--               <span class="quote-icon">{% include 'icon-quote' %}</span> -->
+                {% if block.settings.quote != blank %}
+                <div class="rte-setting rte"><p>{{ block.settings.quote }}</p></div>
+                {% endif %}
+                {% if block.settings.author != blank %}
+                  <cite>{{ block.settings.author | escape }}</cite>
+                {% endif %}
+              </blockquote>
+            </div>
+          <div class="sub-banner-bar"></div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  
+  
+  </div>
+  
+  {% schema %}
+    {
+      "name": {
+        "en": "Testimonials",
+        "de": "Testimonials",
+        "fr": "Témoignages"
+      },
+      "class": "index-section",
+      "max_blocks": 9,
+      "settings": [
+      {
+          "type": "image_picker",
+          "id": "topbannerdesktop",
+          "label": "Top Banner Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "topbannermobile",
+          "label": "Top Banner Mobile"
+        },
+        {
+          "type": "color",
+          "id": "topbannercolor",
+          "label": "Top Banner Text color"
+        },
+        {
+          "type": "html",
+          "id": "topbannertitle",
+          "label": "Top Banner Title"
+        },
+        {
+          "type": "html",
+          "id": "topbannercopy",
+          "label": "Top Banner Copy"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "Heading",
+            "de": "Titel",
+            "fr": "En-tête"
+          },
+          "default": {
+            "en": "Testimonials",
+            "de": "Testimonials",
+            "fr": "Témoignages"
+          }
+        }
+      ],
+      "blocks": [
+        {
+          "type": "quote",
+          "name": {
+            "en": "Testimonial",
+            "de": "Testimonial",
+            "fr": "Témoignages"
+          },
+          "settings": [
+            {
+              "type": "richtext",
+              "id": "quote",
+              "label": {
+                "en": "Text",
+                "de": "Text",
+                "fr": "Texte"
+              },
+              "default": {
+                "en": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+                "de": "<p>Kunden-Reviews und Testimonials, die Kundenzufriedenheit beweisen.</p>",
+                "fr": "<p>Ajoutez des avis et témoignages pour mettre en avant vos clients satisfaits.</p>"
+              }
+            },
+            {
+              "type": "text",
+              "id": "author",
+              "label": {
+                "en": "Author",
+                "de": "Autor",
+                "fr": "Auteur"
+              },
+              "default": {
+                "en": "Author's name",
+                "de": "Name des Autors",
+                "fr": "Nom de l'auteur"
+              }
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": {
+            "en": "Testimonials",
+            "de": "Testimonials",
+            "fr": "Témoignages"
+          },
+          "category": {
+            "en": "Text",
+            "de": "Text",
+            "fr": "Texte"
+          },
+          "blocks": [
+            {
+              "type": "quote"
+            },
+            {
+              "type": "quote"
+            },
+            {
+              "type": "quote"
+            }
+          ]
+        }
+      ]
+    }
+  {% endschema %}
